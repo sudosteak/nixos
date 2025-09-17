@@ -65,13 +65,17 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.j = {
+    hashedPassword = "$6$2zmAFXjDd0J1gZkp$Zg76n90RPiPA.xZt/tYrl92wvKhGLwCEzQJBQqYZVJGM/z6Dxle9EMMTnP28vhzFJ/m.NECkGYqm4cEHYVMsf1";
     isNormalUser = true;
     description = "j";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ 
+      "networkmanager" 
+      "wheel" 
+    ];
     packages = with pkgs; [
       kdePackages.kate
     ];
@@ -92,7 +96,6 @@
     htop
     curl
     btrfs-progs
-    
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
