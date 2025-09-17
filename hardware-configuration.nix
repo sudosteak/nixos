@@ -1,0 +1,1 @@
+/run/media/j/nixos/@/etc/nixos/hardware-configuration.nix
